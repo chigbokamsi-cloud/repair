@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nextgen Labs | Building the Next Generation of CEOs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #FFD700;
+      --primary-dim: #b89b00;
+      --bg: #0a0a0a;
+      --card-bg: #161616;
+      --text: #ffffff;
+      --text-muted: #a0a0a0;
+      --border: #2a2a2a;
+      --nav-height: 80px;
+    }
+    * { box-sizing: border-box; scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header {
+      position: fixed;
+      top: 0; width: 100%;
+      height: var(--nav-height);
+      background: rgba(10, 10, 10, 0.8);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      z-index: 1000;
+    }
+    .logo-box { display: flex; align-items: center; gap: 12px; }
+    .logo-box img { width: 40px; height: auto; }
+    .logo-box h1 { font-size: 22px; color: var(--primary); margin: 0; text-transform: uppercase; letter-spacing: 1px; }
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 14px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+    nav a:hover { color: var(--primary); }
+    section { padding: 100px 5%; max-width: 1200px; margin: 0 auto; }
+    .hero {
+      height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      padding-top: var(--nav-height);
+    }
+    .hero h2 { font-size: clamp(32px, 5vw, 64px); margin-bottom: 10px; }
+    .hero p { color: var(--text-muted); font-size: 1.2rem; max-width: 700px; margin: 0 auto 30px; }
+    h2.section-title { text-align: center; font-size: 32px; color: var(--primary); margin-bottom: 50px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+    .card { background: var(--card-bg); border: 1px solid var(--border); padding: 30px; border-radius: 16px; transition: all 0.3s ease; cursor: pointer; }
+    .card:hover { border-color: var(--primary); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(255, 215, 0, 0.05); }
+    .card h3 { margin: 0 0 15px 0; color: var(--primary); font-size: 20px; }
+    .card .details { display: none; margin-top: 15px; padding-top: 15px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 14px; }
+    .card.active .details { display: block; }
+    .portfolio-item { background: var(--card-bg); border-radius: 12px; overflow: hidden; border: 1px solid var(--border); }
+    .portfolio-item img { width: 100%; height: 200px; object-fit: cover; }
+    .portfolio-item-content { padding: 20px; }
+    form { max-width: 600px; margin: 0 auto; background: var(--card-bg); padding: 40px; border-radius: 20px; border: 1px solid var(--border); }
+    input, textarea { width: 100%; padding: 15px; margin-bottom: 15px; background: #000; border: 1px solid var(--border); color: #fff; border-radius: 8px; }
+    button { width: 100%; padding: 15px; background: var(--primary); color: #000; font-weight: 700; border: none; border-radius: 8px; cursor: pointer; transition: 0.3s; }
+    button:hover { background: var(--primary-dim); }
+    footer { text-align: center; padding: 50px; border-top: 1px solid var(--border); color: var(--text-muted); }
+    .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s all ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    @media (max-width: 768px) { nav { display: none; } }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-box">
+    <img src="images/nextgenlabs.png" alt="Nextgen Labs">
+    <h1>Nextgen Labs</h1>
+  </div>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#portfolio">Work</a>
+    <a href="#cta">Contact</a>
+  </nav>
+</header>
+
+<section class="hero reveal">
+  <h2>Building & Helping CEOs of the Next Generation</h2>
+  <p>An elite creator agency helping young visionaries build professional portfolios, digital products, and high-impact brands.</p>
+  <div>
+    <a href="#cta" style="text-decoration: none;"><button style="width: auto; padding: 15px 40px;">Get Started</button></a>
+  </div>
+</section>
+
+<section id="about" class="reveal">
+  <h2 class="section-title">The Mission</h2>
+  <p style="text-align: center; max-width: 800px; margin: 0 auto;">
+    We empower teen creators and young entrepreneurs by providing the technical and creative execution needed to turn ideas into income. From digitization to ghostwriting, we handle the "how" so you can focus on the "why."
+  </p>
+</section>
+
+<section id="services" class="reveal">
+  <h2 class="section-title">Our Services</h2>
+  <div class="grid">
+    <div class="card" onclick="this.classList.toggle('active')">
+      <h3>✍️ Ghostwriting</h3>
+      <p>Professional content for the busy CEO.</p>
+      <div class="details">Captions, blogs, articles, and full ebooks tailored to your unique voice.</div>
+    </div>
+    <div class="card" onclick="this.classList.toggle('active')">
+      <h3>🎨 Visual Design</h3>
+      <p>High-end branding and marketing.</p>
+      <div class="details">Flyers, posters, and presentation slides designed to grab attention and close deals.</div>
+    </div>
+    <div class="card" onclick="this.classList.toggle('active')">
+      <h3>💻 Digital Products</h3>
+      <p>Monetize your knowledge.</p>
+      <div class="details">We help you digitize school notes, create templates, and build scalable digital assets.</div>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio" class="reveal">
+  <h2 class="section-title">Our Work</h2>
+  <div class="grid">
+    <div class="portfolio-item">
+      <img src="images/ebook.png" alt="Ebook">
+      <div class="portfolio-item-content">
+        <h3>Ebook Design</h3>
+        <p>Sleek layout for digital creators.</p>
+      </div>
+    </div>
+    <div class="portfolio-item">
+      <img src="images/Fairy.png" alt="Branding">
+      <div class="portfolio-item-content">
+        <h3>Visual Identity</h3>
+        <p>A full brand kit for a rising entrepreneur.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cta" class="reveal">
+  <h2 class="section-title">Contact Us</h2>
+  <form action="https://formspree.io/f/meonpyyg" method="POST">
+    <input type="text" name="name" placeholder="Full Name" required>
+    <input type="email" name="email" placeholder="Email Address" required>
+    <textarea name="message" rows="5" placeholder="Tell us about your project..." required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<footer>
+  <p>&copy; 2026 Nextgen Labs. All rights reserved.</p>
+  <p>Follow us on <a href="#" style="color: var(--primary);">Instagram</a> & <a href="#" style="color: var(--primary);">TikTok</a></p>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(section => observer.observe(section));
+</script>
+
+</body>
+</html>
